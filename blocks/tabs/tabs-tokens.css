@@ -24,6 +24,11 @@
   --tabs-prepare-tab-gap: 24px;
   --tabs-prepare-icon-size: 49px;
   --tabs-prepare-icon-gap: 15px;
+
+  /* vertical space reserved above each pill for the icon + its gap to the label,
+     and the matching upward offset that floats the icon into that space */
+  --tabs-prepare-icon-offset: 64px;
+  --tabs-prepare-icon-top: -64px;
   --tabs-prepare-tab-label-font-size: 18px;
   --tabs-prepare-tab-label-line-height: 22px;
   --tabs-prepare-tab-color: var(--brand-teal);
@@ -95,7 +100,7 @@ main .section.prepare-tabs .tabs .tabs-list {
   justify-content: center;
   align-items: flex-start;
   gap: var(--tabs-prepare-tab-gap);
-  padding-top: calc(var(--tabs-prepare-icon-size) + var(--tabs-prepare-icon-gap));
+  padding-top: var(--tabs-prepare-icon-offset);
   overflow: visible;
 }
 
@@ -124,7 +129,7 @@ main .section.prepare-tabs .tabs .tabs-list button.tabs-tab {
 /* Authored icon: pulled up so it floats above the pill, centered horizontally. */
 main .section.prepare-tabs .tabs .tabs-list button.tabs-tab :is(picture, img, .icon) {
   position: absolute;
-  top: calc((var(--tabs-prepare-icon-size) + var(--tabs-prepare-icon-gap)) * -1);
+  top: var(--tabs-prepare-icon-top);
   left: 50%;
   width: var(--tabs-prepare-icon-size);
   height: var(--tabs-prepare-icon-size);
