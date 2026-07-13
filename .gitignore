@@ -17,3 +17,9 @@ Trace*.json
 # Playwright / a11y test artifacts
 playwright-report/
 test-results/
+
+# Local agent and Copilot preferences
+AGENTS.local.md
+.github/copilot-instructions.md
+docs/contribution-checklist.md
+docs/new-block-template.md
